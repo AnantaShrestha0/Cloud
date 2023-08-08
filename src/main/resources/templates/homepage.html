@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Upload</title>
+<style type="text/css">
+.cardd{
+padding-top: 50px;
+}
+
+</style>
 </head>
 <body>
 
-<h1>Welcome [[${username}]]</h1>
+<th:block th:insert="userheader.html"></th:block>
+    <div class="cardd">
+    <div class="container-fluid">
+    
+    <div class="card">
+    <div class="card-header text-center bg-primary text-white"><h5>Upload Form</h5></div>
+    <div class="card-body">
+    
+    <form action="/upload/uploadImage" method="post" enctype="multipart/form-data">
+    <div class="row p-2">
+    <div class="col-4">Select Image</div>
+    <div class="col-6">
+    <input type="file" name="image" class="form-control">
+    </div>
+    </div>
+    
+   
+    
+    
+      <div class="row p-2">
+    <div class="col-4"></div>
+    <div class="col-6">
+    <input type="submit" value="Upload" class="btn btn-success btn-lg">
+    </div>
+    </div>
+    <p>[[${message}]]</p>
+    </form>
+    
+    </div>
+    <div class="card-footer text-center bg-warning "><h6>.</h6><div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  
 
 </body>
 </html>

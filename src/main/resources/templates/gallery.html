@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog-Z About page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+<!--
+    
+TemplateMo 556 Catalog-Z
+
+https://templatemo.com/tm-556-catalog-z
+
+-->
+
+<style>
+   .background-image{
+        background-image: url(img1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Set body height to full viewport height */
+            margin-top: 0x; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            transition: background-image 1s ease;
+    }
+
+    .navbar{
+background-color: white;
+    }
+</style>
+</head>
+<body>
+    <!-- Page Loader -->
+    
+  <th:block th:insert="userheader.html"></th:block>
+
+
+  
+    <div class="row tm-mb-90 tm-gallery">
+   
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+         
+            <figure class="effect-ming tm-video-item">
+              <span th:each="image:${imageNameList}">     
+    <img alt="" th:src="@{'/images/'+${image}}">
+     </span>
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2></h2>
+                    <!-- <a href="photo-detail.html">View more</a> -->
+                </figcaption>                    
+            </figure>
+            <div class="d-flex justify-content-between tm-text-gray">
+                <span class="tm-text-gray-light"></span>
+                <!-- <span>9,906 views</span> -->
+                
+            </div>
+           
+            
+        </div>
+          </div>
+                
+      
+
+
+       
+
+
+    
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+
+
+
+    </script>
+</body>
+</html>
