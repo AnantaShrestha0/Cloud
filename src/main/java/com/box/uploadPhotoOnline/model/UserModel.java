@@ -29,7 +29,6 @@ public class UserModel {
 	@Transient
 	private String conformpassword;
 	
-	@OneToMany(mappedBy = "userModel", cascade = CascadeType.ALL)
-    private List<ImageModel> imageModels = new ArrayList<>();
+
 }
 	

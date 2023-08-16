@@ -51,7 +51,7 @@ public class uploadImageController {
 		}
 		
 		UserModel user=(UserModel) session.getAttribute("validUser");
-		
+		int userid=user.getId();
 		LocalDate currentDate = LocalDate.now();
 		String date = currentDate.toString();
 		
@@ -62,10 +62,11 @@ public class uploadImageController {
 			    ImageModel imageModel=new ImageModel();
 			    imageModel.setPhotoname(image.getOriginalFilename());
 			    imageModel.setDate(date);
-			    imageModel.setUserModel(user); // Set the user for the image
+			    imageModel.setUserid(userid);
+			    uploadService.addImage(imageModel);
 	            
-	            user.getImageModels().add(imageModel); // Add the image to the user's list
-	            userService.saveUser(user);
+	            
+	           
 			model.addAttribute("message","File uploaded successfully");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -88,6 +89,8 @@ public class uploadImageController {
 				return "SignIn";
 			}
 			
+			
+		    
 			String[] imageName=new File("src/main/resources/static/images").list();
 			model.addAttribute("imageNameList", imageName);
 			model.addAttribute("active_message", "active");

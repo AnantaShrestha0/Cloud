@@ -15,11 +15,9 @@ import lombok.Data;
 public class ImageModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
+	private int userid;
 	private String photoname;
 	private String date;
-	  @ManyToOne
-	    @JoinColumn(name = "user_id")
-	    private UserModel userModel;
 }
